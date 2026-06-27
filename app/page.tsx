@@ -1,19 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiscord } from "@fortawesome/free-brands-svg-icons";
-import {
-  faBolt,
-  faEarthEurope,
-  faShieldHalved,
-  faPeopleGroup,
-  faDragon,
-  faWandMagicSparkles,
-  faChevronDown,
-  faPlay,
-} from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faPlay } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Wordmark from "@/components/Wordmark";
-import HeroesCarousel, { type HeroSlide } from "@/components/HeroesCarousel";
 import styles from "./home.module.css";
 
 // TODO: replace with the real Oathbound community invite once available.
@@ -51,26 +41,6 @@ const GALLERY = [
   "/world/zone-08.jpg",
   "/world/zone-10.jpg",
   "/mounts/mount-02.jpg",
-];
-
-const FEATURES = [
-  { icon: faBolt, title: "Instant Play", body: "Jump in from any modern browser. No downloads, no installs, no friction." },
-  { icon: faEarthEurope, title: "A 3D Open World", body: "Explore a seamless, handcrafted realm rendered in full 3D, from peak to dungeon depths." },
-  { icon: faShieldHalved, title: "Choose Your Path", body: "Dozens of classes and playstyles, from sworn knights to wild spellweavers." },
-  { icon: faPeopleGroup, title: "Adventure Together", body: "Form guilds, run dungeons, and write history alongside friends and rivals." },
-  { icon: faDragon, title: "Hunt World Bosses", body: "Rally the realm against towering threats that test everything you've learned." },
-  { icon: faWandMagicSparkles, title: "A World That Grows", body: "Seasons, events, and new lands — Oathbound keeps evolving long after you arrive." },
-];
-
-const HEROES: HeroSlide[] = [
-  { img: "/heroes/hero-01.jpg", oath: "By blade and by vow, I stand." },
-  { img: "/heroes/hero-02.jpg", oath: "The wilds remember my name." },
-  { img: "/heroes/hero-03.jpg", oath: "Magic answers when I call." },
-  { img: "/heroes/hero-04.jpg", oath: "No shadow shall pass me." },
-  { img: "/heroes/hero-05.jpg", oath: "I keep the old promises." },
-  { img: "/heroes/hero-06.jpg", oath: "For those who cannot fight." },
-  { img: "/heroes/hero-07.jpg", oath: "Sworn to the breaking dawn." },
-  { img: "/heroes/hero-08.jpg", oath: "Unbroken. Unbound." },
 ];
 
 export default function HomePage() {
@@ -192,46 +162,6 @@ export default function HomePage() {
             Pre-alpha footage. Everything shown is a work in progress.
           </p>
         </div>
-      </section>
-
-      <hr className="rule-gold" />
-
-      {/* ===== FEATURES ===== */}
-      <section id="features" className={styles.features}>
-        <div className="container">
-          <div className="section-label">
-            <span className="eyebrow">Why Oathbound</span>
-            <h2>An MMORPG Without the Barriers</h2>
-            <p>Everything you love about online RPGs — and nothing standing between you and the adventure.</p>
-          </div>
-
-          <div className={styles.featureGrid}>
-            {FEATURES.map((f) => (
-              <article key={f.title} className={styles.featureCard}>
-                <span className={styles.featureIcon}><FontAwesomeIcon icon={f.icon} /></span>
-                <h3>{f.title}</h3>
-                <p>{f.body}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <hr className="rule-gold" />
-
-      {/* ===== HEROES ===== */}
-      <section id="heroes" className={styles.heroes}>
-        <div className="container">
-          <div className="section-label">
-            <span className="eyebrow">Heroes of the Realm</span>
-            <h2>Every Hero Swears an Oath</h2>
-            <p>
-              Knights and rangers, spellweavers and wildkin — and paths yet
-              unseen. Whoever you become, your legend begins with a vow.
-            </p>
-          </div>
-        </div>
-        <HeroesCarousel heroes={HEROES} />
       </section>
 
       <hr className="rule-gold" />

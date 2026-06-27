@@ -8,8 +8,6 @@ import Wordmark from "./Wordmark";
 
 const LINKS = [
   { href: "#realm", label: "The Realm" },
-  { href: "#features", label: "Features" },
-  { href: "#heroes", label: "Heroes" },
   { href: "#first-look", label: "First Look" },
 ];
 

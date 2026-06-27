@@ -175,85 +175,6 @@
   margin-top: 22px;
 }
 
-/* ===== FEATURES ===== */
-.features { padding: 100px 0; background: var(--color-bg); }
-.featureGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-.featureCard {
-  background: linear-gradient(180deg, var(--color-bg-3), var(--color-surface));
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 14px;
-  padding: 34px 28px;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-.featureCard:hover {
-  transform: translateY(-5px);
-  border-color: var(--color-border);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
-}
-.featureIcon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 58px;
-  height: 58px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  font-size: 1.4rem;
-  color: var(--color-gold);
-  background: radial-gradient(circle at 30% 30%, rgba(244, 208, 63, 0.18), rgba(244, 208, 63, 0.04));
-  border: 1px solid var(--color-border);
-}
-.featureCard h3 { color: #fff; font-size: 1.22rem; margin-bottom: 10px; }
-.featureCard p { color: var(--color-text-muted); font-size: 0.98rem; line-height: 1.65; }
-
-/* ===== HEROES ===== */
-.heroes { padding: 100px 0; background: var(--color-bg-2); }
-.heroesCarouselWrap { padding: 0 24px; max-width: 1480px; margin: 0 auto; }
-
-.heroCard {
-  position: relative;
-  height: 440px;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid var(--color-border);
-  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.5);
-}
-.heroCard img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 28%;
-  transition: transform 0.6s ease;
-}
-.heroCard:hover img { transform: scale(1.06); }
-.heroCardOverlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 38%, rgba(6, 8, 11, 0.55) 66%, rgba(6, 8, 11, 0.96) 100%);
-}
-.heroCardBody {
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  padding: 22px 22px 26px;
-  text-align: center;
-}
-.heroCardMark { color: var(--color-gold); font-size: 1.1rem; display: block; margin-bottom: 8px; }
-.heroCardOath {
-  font-family: var(--font-heading);
-  font-style: italic;
-  color: var(--color-parchment);
-  font-size: 1.06rem;
-  line-height: 1.4;
-  margin: 0;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
-}
-
 /* ===== FIRST LOOK ===== */
 .firstLook { padding: 100px 0; background: var(--color-bg); }
 .reveal {
@@ -358,7 +279,6 @@
   .realmRow { grid-template-columns: 1fr; gap: 24px; direction: ltr; }
   .realmRow:nth-child(even) { direction: ltr; }
   .gallery { grid-template-columns: repeat(2, 1fr); }
-  .featureGrid { grid-template-columns: repeat(2, 1fr); }
   .sagaBanner { margin-top: 56px; }
 }
 
@@ -368,8 +288,7 @@
   .heroButtons :global(.btn-epic),
   .heroButtons :global(.btn-ghost) { width: 100%; }
   .gallery { grid-template-columns: 1fr 1fr; gap: 10px; }
-  .featureGrid { grid-template-columns: 1fr; }
   .reveal { aspect-ratio: 16 / 10; }
   .saga { padding-top: 80px; }
-  .realm, .features, .heroes, .firstLook { padding: 70px 0; }
+  .realm, .firstLook { padding: 70px 0; }
 }

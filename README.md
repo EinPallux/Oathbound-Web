@@ -14,12 +14,13 @@ no wishlist, just the story, the world, and a way to follow along.
 - **Language:** TypeScript
 - **Styling:** global CSS + CSS Modules (dark + gold "heroic high fantasy" theme)
 - **Fonts:** Fontin Sans (headings) + Calibri (body), self-hosted in `public/fonts/`
-- **Icons:** Font Awesome 6 (CDN)
-- **Carousel:** Swiper 12 (dynamically imported)
+- **Icons:** Font Awesome rendered as inline SVG via the `@fortawesome` React
+  packages (self-hosted — no CDN dependency)
 
 The design system, fonts, gold "epic" buttons, glow dividers and imagery are
 adapted from the sibling **BarrensCMS** project so the two sites share a
-consistent, polished UI language.
+consistent, polished UI language. The site is fully self-contained with no
+runtime CDN dependencies.
 
 ## Getting Started
 
@@ -39,8 +40,6 @@ Deploy on Vercel by importing the repo — Next.js is auto-detected from the roo
 | Hero | `#top` | Wordmark, tagline, "Now in Development" badge, community CTA |
 | The Saga Begins | `#saga` | Announcement copy + heroes banner |
 | The Realm | `#realm` | 3D-world / play-in-browser / oaths, plus a screenshot gallery |
-| Why Oathbound | `#features` | Feature grid (instant play, open world, classes, guilds…) |
-| Heroes of the Realm | `#heroes` | Character showcase carousel with oath fragments |
 | First Look | `#first-look` | "Reveal Trailer — Coming Soon" cinematic block |
 | Will You Answer the Call? | `#community` | Final hype CTA |
 
@@ -48,7 +47,7 @@ Deploy on Vercel by importing the repo — Next.js is auto-detected from the roo
 
 ```
 app/
-  layout.tsx        # metadata, fonts/CDN links
+  layout.tsx        # metadata + Font Awesome setup
   page.tsx          # the full landing page (content lives here)
   globals.css       # design system: fonts, palette, nav, footer, buttons, wordmark
   home.module.css   # per-section styles
@@ -57,9 +56,8 @@ components/
   Navbar.tsx        # fixed nav with anchor links + community CTA
   Footer.tsx        # footer with links + social placeholders
   Wordmark.tsx      # the typographic "Oathbound" wordmark
-  HeroesCarousel.tsx# Swiper showcase
 public/
-  fonts/  ui/  art/  world/  heroes/  mounts/
+  fonts/  ui/  art/  world/  mounts/
 ```
 
 ## Before Launch — things to fill in

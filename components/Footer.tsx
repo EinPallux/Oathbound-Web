@@ -41,8 +41,6 @@ export default function Footer() {
           <h4>Explore</h4>
           <ul>
             <li><a href="#realm">The Realm</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#heroes">Heroes</a></li>
             <li><a href="#first-look">First Look</a></li>
           </ul>
         </div>
