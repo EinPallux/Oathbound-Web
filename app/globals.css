@@ -200,32 +200,41 @@ ul, ol { list-style: none; }
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: url('/ui/btn-normal.webp') center/cover no-repeat;
+  box-sizing: border-box;
+  min-width: 210px;
+  min-height: 58px;
+  padding: 3px 26px;
   color: #fff;
-  padding: 16px 44px;
-  min-width: 200px;
-  min-height: 56px;
-  border: none;
-  border-radius: 6px;
+  /* 9-slice the ornate plate so the gold frame never crops or distorts,
+     no matter the label length. Only the cracked-stone centre stretches.
+     Slice values are the measured frame insets (top right bottom left) of
+     the 3414x893 source art; `fill` paints the stone behind the label. */
+  border-style: solid;
+  border-width: 11px 17px 17px 17px;
+  border-image-source: url('/ui/btn-normal.webp');
+  border-image-slice: 73 112 122 112 fill;
+  border-image-repeat: stretch;
+  background: transparent;
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  transition: transform 0.15s ease, filter 0.15s ease;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
   text-shadow: 0 2px 4px rgba(0, 0, 0, 1), 0 4px 8px rgba(0, 0, 0, 0.8);
 }
 .btn-epic:hover {
-  background-image: url('/ui/btn-hover.webp');
+  border-image-source: url('/ui/btn-hover.webp');
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(244, 208, 63, 0.28);
+  filter: drop-shadow(0 7px 16px rgba(244, 208, 63, 0.4));
   color: #fff;
 }
 .btn-epic:active {
-  background-image: url('/ui/btn-active.webp');
+  border-image-source: url('/ui/btn-active.webp');
   transform: translateY(1px);
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.55));
 }
 
 .btn-ghost {
@@ -296,7 +305,14 @@ ul, ol { list-style: none; }
   transition: color 0.2s ease, background 0.2s ease;
 }
 .nav-links a:hover { color: var(--color-gold); background: rgba(255, 255, 255, 0.06); }
-.nav-cta { margin-left: 10px; min-width: auto; padding: 12px 28px; min-height: 46px; font-size: 0.8rem; }
+.nav-cta {
+  margin-left: 10px;
+  min-width: auto;
+  min-height: 44px;
+  padding: 2px 18px;
+  border-width: 8px 13px 13px 13px;
+  font-size: 0.8rem;
+}
 
 .nav-toggle {
   display: none;
